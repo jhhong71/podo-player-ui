@@ -1,0 +1,276 @@
+@charset "utf-8";
+/*
+*--------------------------------------------*
+|                   Root                     |
+*--------------------------------------------*
+*/
+:root {
+    --layout-width: 1280px;                     /* ë ˆì´ì•„ì›ƒ ë„“ì´ */
+    --layout-padding: 5.13vw;                   /* ëª¨ë°”ì¼ ì•ˆìª½ ì—¬ë°± (20px) */
+    --Pretendard: "Pretendard", sans-self;                              /* í°íŠ¸ì²´ */
+    --SUIT: "SUIT", sans-self;                                          /* í°íŠ¸ì²´2 */
+    --notosansKr: "Noto Sans KR", sans-self;                            /* í°íŠ¸ì²´3 */
+    --Poppins: "Poppins", sans-self;                                    /* í°íŠ¸ì²´4 */
+    --spoqaHanSansNeo: "Spoqa Han Sans Neo", sans-self;                 /* í°íŠ¸ì²´5 */
+    --pretendardVariable: "Pretendard Variable", sans-self;             /* í°íŠ¸ì²´6 */
+    --Saira: "Saira", sans-self;                                        /* í°íŠ¸ì²´7 */
+    --GmarketSansBold: "GmarketSansBold", sans-self;                    /* í°íŠ¸ì²´8 */
+    --GmarketSansLight: "GmarketSansLight", sans-self;                  /* í°íŠ¸ì²´9 */
+    --font-size: 16px;                          /* í°íŠ¸ í¬ê¸° */
+    --font-let-spc: -0.02em;                    /* ìžê°„ */
+    --line-height: 1.5;                         /* í–‰ê°„ */
+    --default-font-color: #46464F;              /* ê¸°ë³¸ í°íŠ¸ ì»¬ëŸ¬ */
+    --disabled-color: #e7e7e7;                  /* disabled ì»¬ëŸ¬ */
+
+    --notch: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);     /* ì•„ì´í° ë…¸ì¹˜ ëŒ€ì‘ */
+
+    /* Color */
+    /*  Primary(theme)  */
+    --primary-50: #F8F9FD;
+    --primary-100: #F2F2FC;
+    --primary-200: #EBEBFA;
+    --primary-300: #999CE4;
+    --primary-400: #0c62e3;
+    --primary-500: #1460d2;
+    --primary-600: #0f3773;
+    --primary-700: #37396D;
+    --primary-800: #0A0B25;
+
+    --black-900: #000000;
+    --black-800: #121212;
+    --black-750: #222222;
+    --black-700: #303030;
+    --black-650: #3d3d3d;
+    --black-600: #404040;
+    --black-500: #555555;
+    --black-400: #8E8E8E;
+    --black-300: #B8B8B8;
+
+    --black-op-900: rgba(0,0,0,0.5);
+
+    --gray-80: #c8c8c8;
+    --gray-90: #c2c2c2;
+    --gray-100: #a9acac;
+    --gray-200: #929292;
+    --gray-250: #8e8e8e;
+    --gray-300: #8d96a5;
+    --gray-350: #757575;
+    --gray-400: #565656;
+    --gray-450: #6b6b6b;
+    --gray-500: #4a4a4a;
+    --gray-750: #414146;
+    --gray-800: #444748;
+
+    --dark-gray-500: #5c5c5c;
+    --dark-gray-600: #3e3e3e;
+
+    --white: #ffffff;
+    --white-50: #FCFCFC;
+    --white-100: #fafafa;
+    --white-130: #f9f9f9;
+    --white-150: #F8F8F8;
+    --white-300: #F5F5F5;
+    --white-400: #f1f1f1;
+    --white-450: #E8E8E8;
+    --white-500: #eaeaea;
+    --white-600: #DDDDDD;
+    --white-650: #e5e5e5;
+
+    --purple-gray-50: #f4f2fa;
+
+    --blue-gray-50: #EBECF0;
+    --blue-gray-100: #DFE3E9;
+
+    --sky-blue-50: #f2f8ff;
+
+    --bora-50: #f4f2fa;
+    --bora-500: #8B5CD4;
+
+    --orange-50: #fcf4f4;
+    --orange-500: #FA7C35;
+    --orange-600: #F86A0E;
+    --orange-650: #ff6b00;
+    --orange-700: #ff5c00;
+
+    --blue-400: #256fff;
+    --blue-500: #2269D1;
+    --blue-600: #0c62e3;
+
+    --indigo-800: #071c3a;
+
+    --slate-blue-500: #5C61D4;
+
+    --green-50: #e9f4f3;
+    --green-500: #80B430;
+    --green-600: #007a31;
+
+    --red-500: #E43E3E;
+    --red-600: #D23325;         /* ì¤‘ìš”, ë‚˜ì˜ê°•ì˜ì‹¤ í™”ìƒ */
+
+    --online-400: #a388ca;     /* ì˜¨ë¼ì¸ ì—°í•˜ê²Œ */
+    --online-500: #7b55af;     /* ì˜¨ë¼ì¸ ê¸°ë³¸ */
+    --online-600: #573c88;     /* ì˜¨ë¼ì¸ ì§„í•˜ê²Œ */
+
+    --offline-400: #f9a94f;     /* ì§‘í•© ì—°í•˜ê²Œ */
+    --offline-500: #f5881b;     /* ì§‘í•© ê¸°ë³¸ */
+    --offline-600: #c46b00;     /* ì§‘í•© ì§„í•˜ê²Œ */
+
+    --blended-400: #65a88f;     /* ë¸”ëžœë””ë“œ ì—°í•˜ê²Œ */
+    --blended-500: #8e8a21;     /* ë¸”ëžœë””ë“œ ê¸°ë³¸ */
+    --blended-600: #256750;     /* ë¸”ëžœë””ë“œ ì§„í•˜ê²Œ */
+
+    --burn-400: #1792ea;     /* í™”ìƒ ì—°í•˜ê²Œ */
+    --burn-500: #3c896e;     /* í™”ìƒ ê¸°ë³¸ */
+    --burn-600: #1792ea;     /* í™”ìƒ ì§„í•˜ê²Œ */
+
+    --attClass-400: #6ea3ea;     /* ìˆ˜ê°• ì—°í•˜ê²Œ */
+    --attClass-500: #3881e0;     /* ìˆ˜ê°• ê¸°ë³¸ */
+    --attClass-600: #2a63b3;     /* ìˆ˜ê°• ì§„í•˜ê²Œ */
+
+    --comp-400: #0e8e8e;     /* ìˆ˜ë£Œ ì—°í•˜ê²Œ */
+    --comp-500: #0e8e8e;     /* ìˆ˜ë£Œ ê¸°ë³¸ */
+    --comp-600: #0e8e8e;     /* ìˆ˜ë£Œ ì§„í•˜ê²Œ */
+
+    --notSel-400: #979797;     /* ë¯¸ì„ ì • ì—°í•˜ê²Œ */
+    --notSel-500: #979797;     /* ë¯¸ì„ ì • ê¸°ë³¸ */
+    --notSel-600: #979797;     /* ë¯¸ì„ ì • ì§„í•˜ê²Œ */
+
+    --appl-400: #f15e1f;     /* ì‹ ì²­ ì—°í•˜ê²Œ */
+    --appl-500: #f15e1f;     /* ì‹ ì²­ ê¸°ë³¸ */
+    --appl-600: #f15e1f;     /* ì‹ ì²­ ì§„í•˜ê²Œ */
+
+    --ess-400: #22a0c8;     /* í•„ìˆ˜ ì—°í•˜ê²Œ */
+    --ess-500: #22a0c8;     /* í•„ìˆ˜ ê¸°ë³¸ */
+    --ess-600: #22a0c8;     /* í•„ìˆ˜ ì§„í•˜ê²Œ */
+
+    --sel-400: #f5a201;     /* ì„ íƒ ì—°í•˜ê²Œ */
+    --sel-500: #f5a201;     /* ì„ íƒ ê¸°ë³¸ */
+    --sel-600: #f5a201;     /* ì„ íƒ ì§„í•˜ê²Œ */
+
+    --pass-400: #0395ff;     /* pass ì—°í•˜ê²Œ */
+    --pass-500: #0395ff;     /* pass ê¸°ë³¸ */
+    --pass-600: #0395ff;     /* pass ì§„í•˜ê²Œ */
+
+    --fail-400: #aa3c3c;     /* fail ì—°í•˜ê²Œ */
+    --fail-500: #aa3c3c;     /* fail ê¸°ë³¸ */
+    --fail-600: #aa3c3c;     /* fail ì§„í•˜ê²Œ */
+
+    --hw-400: #6b24b1;     /* ê³¼ì œ ì—°í•˜ê²Œ */
+    --hw-500: #6b24b1;     /* ê³¼ì œ ê¸°ë³¸ */
+    --hw-600: #6b24b1;     /* ê³¼ì œ ì§„í•˜ê²Œ */
+
+    --test-400: #2461d8;     /* ì‹œí—˜ ì—°í•˜ê²Œ */
+    --test-500: #2461d8;     /* ì‹œí—˜ ê¸°ë³¸ */
+    --test-600: #2461d8;     /* ì‹œí—˜ ì§„í•˜ê²Œ */
+
+    --attend-400: #fa6e42;     /* ì¶œì„ ì—°í•˜ê²Œ */
+    --attend-500: #fa6e42;     /* ì¶œì„ ê¸°ë³¸ */
+    --attend-600: #fa6e42;     /* ì¶œì„ ì§„í•˜ê²Œ */
+
+    --comp-crit-400: #39a7a1;     /* ìˆ˜ë£Œ ì—°í•˜ê²Œ */
+    --comp-crit-500: #0e8e8e;     /* ìˆ˜ë£Œ ê¸°ë³¸ */
+    --comp-crit-600: #0a6666;     /* ìˆ˜ë£Œ ì§„í•˜ê²Œ */
+
+    --notComp-400: #f26a71;     /* ë¯¸ìˆ˜ë£Œ ì—°í•˜ê²Œ */
+    --notComp-500: #db414a;     /* ë¯¸ìˆ˜ë£Œ ê¸°ë³¸ */
+    --notComp-600: #b72c34;     /* ë¯¸ìˆ˜ë£Œ ì§„í•˜ê²Œ */
+    
+    --clc-500: #303030; /* ì·¨ì†Œ ê¸°ë³¸ */
+
+    --rate-400: #e72599;     /* ì§„ë„ ì—°í•˜ê²Œ */
+    --rate-500: #e72599;     /* ì§„ë„ ê¸°ë³¸ */
+    --rate-600: #e72599;     /* ì§„ë„ ì§„í•˜ê²Œ */
+
+    --theme-review: #ffbe0b;                    /* ê³¼ì •í›„ê¸° progress bar color */
+    --theme-userNm: #2b49b6;                    /* header top name */
+    --theme-b2c: #ff5c00;                       /* B2C í…Œë§ˆ */
+    --theme-b2c-hover: #cd3b1b;                /* B2C í…Œë§ˆ hover */
+    --theme-red: #d23325;                       /* ì¤‘ìš” */
+
+    /* íŠ¹ìˆ˜ */
+    --color-myClass: #4973d2;                   /* ë‚˜ì˜ ê°•ì˜ì‹¤ ì§ê¸‰/ì§ë¬´ */
+    --bg-myClass-accro: #F9F9F9;                /* ë‚˜ì˜ ê°•ì˜ì‹¤ accrodion */
+    --color-passFail-eisu: #4e75f3;             /* pass fail ì´ìˆ˜ê³¼ì • */
+    --color-passFail-all: #11a99a;              /* pass fail ì´ */
+    --color-passFail-myclass: #ff9d33;          /* pass fail ë‚˜ì˜ ê°•ì˜ì‹¤ ì´ìˆ˜ê³¼ì • */
+    --color-chart: #4e75f3;                     /* ì—°ê°„ ì˜ë¬´í•™ì í˜„í™© text */
+    --color-plan: #11a99a;                      /* ê³„íšëŒ€ë¹„ ì‹¤í–‰ìœ¨ text */
+    --color-credit: #4e75f3;                    /* ê³„íšëŒ€ë¹„ ì‹¤í–‰ìœ¨ text */
+    --color-myClass-training-A: #7b55af;        /* ë‚˜ì˜ ìƒì˜ì‹¤ ìˆ˜ê°•ì¤‘ì¸ê³¼ì • ì˜¨ë¼ì¸, í•™ìŠµí•˜ê¸° lnb */
+    --color-myClass-training-B: #f5881b;        /* ë‚˜ì˜ ìƒì˜ì‹¤ ìˆ˜ê°•ì¤‘ì¸ê³¼ì • ì§‘í•©, í•™ìŠµí•˜ê¸° lnb */
+    --color-myClass-training-D: #8e8a21;        /* ë‚˜ì˜ ìƒì˜ì‹¤ ìˆ˜ê°•ì¤‘ì¸ê³¼ì • ë¸”ë Œë””ë“œ */
+    --color-myClass-training-G: #3c896e;        /* ë‚˜ì˜ ìƒì˜ì‹¤ ìˆ˜ê°•ì¤‘ì¸ê³¼ì • í™”ìƒ */
+    --color-myClass-training-M: #121212;        /* ë‚˜ì˜ ìƒì˜ì‹¤ ìˆ˜ê°•ì¤‘ì¸ê³¼ì • ë§ˆì´í¬ë¡œëŸ¬ë‹ */
+    --color-edu-list-tag-D: #aa41db;                        /* ë¸”ë Œë””ë“œ */
+    --color-edu-list-border-D: #aa41db;                     /* ë¸”ë Œë””ë“œ */
+    --color-edu-list-tag-day: #1a9fcf;                      /* ê¸°ê°„ */
+    --color-edu-list-tag-always: #89554e ;                  /* ìƒì‹œ */
+    --tag-test-color: #6b24b1;                                /* í•™ìŠµí•˜ê¸° ì‹œí—˜ íƒœê·¸ color */
+    --tag-test-bg: #f4f2fa;                                     /* í•™ìŠµí•˜ê¸° ì‹œí—˜ íƒœê·¸ bg */
+    --tag-hw-color: #d23325;                                    /* í•™ìŠµí•˜ê¸° ê³¼ì œ íƒœê·¸ color */
+    --tag-hw-bg: #fcf4f4;                                       /* í•™ìŠµí•˜ê¸° ê³¼ì œ íƒœê·¸ bg */
+
+    --tag-op: #ff800b;                          /* êµìœ¡ì‹ ì²­ íƒœê·¸ ì„ íƒ */
+    --tag-fail4: #922323;                        /* êµìœ¡ì‹ ì²­ íƒœê·¸ Fail */
+    --tag-apply: #141bd0;                       /* ë‚˜ì˜ê°•ì˜ì‹¤ íƒœê·¸ ì‹ ì²­, ì„ ì • */
+    --tag-fail2: #e4535c;                        /* ë‚˜ì˜ê°•ì˜ì‹¤ íƒœê·¸ fail */
+    --tag-training-B: #db414a;                  /* ìƒì„¸ êµìœ¡ìœ í˜• íƒœê·¸ ì§‘í•© */
+
+    --cmplt-cmplt-border: rgba(107, 36, 177, 0.5);     /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ìˆ˜ë£Œ border */
+    --cmplt-cmplt-color: #6b24b1;                      /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ìˆ˜ë£Œ text */
+    --cmplt-cmplt-bg: #f1ecf6;                         /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ìˆ˜ë£Œ bg */
+    --cmplt-cmplt-border1: rgba(250, 66, 176, 0.5);     /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì¶œì„ border */
+    --cmplt-cmplt-color1: #fd63bf;                      /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì¶œì„ text */
+    --cmplt-cmplt-bg1: #ffdff2;                         /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì¶œì„ bg */
+    --cmplt-cmplt-border3: rgba(19, 82, 205, 0.5);     /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì‹œí—˜ border */
+    --cmplt-cmplt-color3: #1352cd;                     /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì‹œí—˜ text */
+    --cmplt-cmplt-bg3: #e5eefa;                        /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì‹œí—˜í—˜ bg*/
+    --cmplt-cmplt-border2: rgba(23, 133, 120, 0.5);    /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì§„ë„ border */
+    --cmplt-cmplt-color2: #178578;                     /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì§„ë„ text */
+    --cmplt-cmplt-bg2: #ebf5f4;                        /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ì§„ë„ bg*/
+    --cmplt-cmplt-border5: rgba(250, 110, 66, 0.5);    /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ê³¼ì œ border */
+    --cmplt-cmplt-color5: #fa6e42;                     /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ê³¼ì œ text */
+    --cmplt-cmplt-bg5: #ffebe4;                         /* ìƒì„¸ ìˆ˜ë£Œê¸°ì¤€ ê³¼ì œ bg*/
+    --apply-btn-bg: #0e0d0d;                            /* ìƒì„¸ ìˆ˜ê°•ì‹ ì²­ ë²„íŠ¼ bg */
+
+    --b-2-c-stroke-01: #e5e5e5;
+    --b-2-b-background-cecece: #cecece;
+    --border-gray-dd: #dddddd;
+    --progress-bar: #ffbe0b;                        /* ê³¼ì •í›„ê¸° progress bar color */
+
+    --btn-default-border-color: #ddd;               /* button default border color */
+    --btn-default-font-color: #404040;               /* button default font color */
+    --btn-disabled-border-color: #ddd;              /* button disabled border color */
+    --btn-disabled-bg-color: #f9f9f9;               /* button disabled background color */
+    --btn-disabled-font-color: #8d96a5;             /* button disabled font color */
+
+    --grey--light: #fafaff;
+    --grey--light2: #efefef;
+
+    --text-ios-color: #000;     /* IOS ê¸°ì¤€ í…ìŠ¤íŠ¸ ì»¬ëŸ¬ ê°•ì¡°, ì œëª©, ê¸°ë³¸ */
+    --text-ios-color02: #8e8e93;     /* IOS ê¸°ì¤€ í…ìŠ¤íŠ¸ ì»¬ëŸ¬ ì—°í•˜ê²Œ */
+
+    --scroll-width: 10px;   /* ìŠ¤í¬ë¡¤ ë°” ë„“ì´ */
+    --scroll-bg: transparent;   /* ìŠ¤í¬ë¡¤ ë°” ë°°ê²½ */
+    --scroll-thumb-bg: #C4C7C7; /* ìŠ¤í¬ë¡¤ ë°°ê²½ */
+
+    /*--icon: url("../images/common/icon.png") no-repeat;  !* ì¼ë°˜ ì•„ì´ì½˜ ì´ë¯¸ì§€ ê²½ë¡œ *!*/
+    /*--icon-size: 300px;    !* ì•„ì´ì½˜ ì´ë¯¸ì§€ í¬ê¸°(ê°€ë¡œxì„¸ë¡œ) *!*/
+
+    /* footer */
+    --footer-top-brd: #4a4a4a;
+    --footer-bg: #3e3e3e;
+
+    /*  skeleton  */
+    /*    --skeleton-bg: #e2e8f0;*/
+    --skeleton-bg: linear-gradient(90deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 50%, #e5e5e5 48%);
+    --skeleton-bgPos: -100% 0;
+    --skeleton-bg50: #cbd5e1;
+
+    /*  accordion  */
+    --acc-round: 10px;  /* ì•„ì½”ë””ì–¸ ë¼ìš´ë“œ */
+
+    --icon: url("../images/common/icon.png") no-repeat;  /* ì¼ë°˜ ì•„ì´ì½˜ ì´ë¯¸ì§€ ê²½ë¡œ */
+    --icon-size: 300px;    /* ì•„ì´ì½˜ ì´ë¯¸ì§€ í¬ê¸°(ê°€ë¡œxì„¸ë¡œ) */
+
+}

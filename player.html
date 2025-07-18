@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학습창 전체화면 예제</title>
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="player.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Kendo UI CSS -->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.2.829/styles/kendo.default-v2.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Kendo UI Script -->
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.2.829/js/messages/kendo.messages.ko-KR.min.js"></script>
+    <script src="player.js"></script>
+
+</head>
+<body>
+    <main class="player-container">
+        <section class="video-wrap" aria-label="학습 영상">
+            <header>1. 강의소개</header>
+            <video id="player" controls poster="">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+        </section>
+        <div class="aside-pannels">
+            <nav class="side-menu-wrap for-mobile" aria-label="사이드 메뉴">
+                <button type="button" class="active" onclick="fnUpdatePanel(this);" aria-controls="curriculumPanel" aria-expanded="true">
+                    <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                    <span>커리큘럼</span>
+                </button>
+                <button type="button" onclick="fnUpdatePanel(this);" aria-controls="qnaPanel" aria-expanded="false">
+                    <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                    <span>질문하기</span>
+                </button>
+            </nav>
+            <aside id="curriculumPanel" class="aside-wrap curriculum-wrap" aria-label="커리큘럼 목록">
+                <div class="aside-header curriculum-header">
+                    <h2>커리큘럼</h2>
+                    <button type="button" class="player-btn-close for-pc" onclick="fnCloseCurr();" aria-label="커리큘럼 닫기"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                </div>
+                <div class="curriculum-summary">
+                    <h3>프론트엔드 개발자를 위한, 실전 웹 성능 최적화</h3>
+                    <div class="progress-wrap">
+                        <span>진도율</span>
+                        <div class="progressbar-wrap">
+                            <progress value="70" max="100"></progress>
+                            <p class="progress-txt"><span class="current">1강</span>/20강(<span class="percent">70%</span>)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-wrap">
+                    <div class="curriculum-section">
+                        <button type="button" class="btn-toggle active"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>섹션 1. Intro</button>
+                        <ul>
+                            <li><button type="button" class="active" onclick="fnStdLink();"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>1-1. 강의 소개</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>1-2. 자료 소개</button></li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-section">
+                        <button type="button" class="btn-toggle active"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>섹션 2. 일반 홈페이지 최적화</button>
+                        <ul>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-1. 실습 내용 소개</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-2. 서비스 탐색 및 코드 분석</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-3. 서비스 탐색 및 코드 분석</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-4. 이미지 지연(lazy) 로딩(intersection observer)</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-5. 이미지 사이즈 최적화</button></li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-section">
+                        <button type="button" class="btn-toggle active"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>섹션 3. 일반 홈페이지 최적화</button>
+                        <ul>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-1. 실습 내용 소개</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-2. 서비스 탐색 및 코드 분석</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-3. Layout Shift 피하기</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-4. 이미지 지연(lazy) 로딩(react-lazylo)</button></li>
+                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-5. 이미지 사이즈 최적화</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <aside id="qnaPanel" class="aside-wrap question-wrap" aria-label="질문하기" hidden>
+                <div class="aside-header question-header">
+                    <h2>질문하기</h2>
+                    <button type="button" class="player-btn-close for-pc" onclick="fnCloseCurr();" aria-label="질문하기 닫기"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                </div>
+                <div class="question-body">
+                    <input type="text" class="k-textbox" placeholder="제목을 입력하세요." aria-label="질문 제목">
+                    <textarea placeholder="내용을 입력하세요." aria-label="질문 내용" maxlength="1000"></textarea>
+                    <ul class="radio-box-wrap">
+                        <li class="radio-wrap">
+                            <input type="radio" name="secretOption" id="secretY" value="Y" checked>
+                            <label for="secretY">
+                                <i class="fa-regular fa-circle-dot"></i>
+                                <span>비밀글 사용</span>
+                            </label>
+                        </li>
+                        <li class="radio-wrap">
+                            <input type="radio" name="secretOption" id="secretN" value="N">
+                            <label for="secretN">
+                                <i class="fa-regular fa-circle"></i>
+                                <span>비밀글 사용안함</span>
+                            </label>
+                        </li>
+                    </ul>
+    
+                    <!-- 파일 업로드 영역 시작 -->
+                    <div class="file-wrap">
+                        <input type="hidden" id="objectId" value="1">
+                        <div id="file_upload" class="hide "></div>
+                        <div id="file_grid" class="file-template"></div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <nav class="side-menu-wrap for-pc" aria-label="사이드 메뉴">
+            <button type="button" class="active" onclick="fnUpdatePanel(this);" aria-controls="curriculumPanel" aria-expanded="true">
+                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                <span>커리큘럼</span>
+            </button>
+            <button type="button" onclick="fnUpdatePanel(this);" aria-controls="qnaPanel" aria-expanded="false">
+                <i class="fa-regular fa-comment-dots" aria-hidden="true"></i>
+                <span>질문하기</span>
+            </button>
+        </nav>
+    </main>
+
+    <!-- 템플릿 및 초기화 스크립트 -->
+    <script type="text/x-kendo-template" id="fileupload_template">
+        <input name="upload_file" id="upload_file" type="file"/>
+    </script>
+
+    <!-- 파일 템플릿 -->
+    <script id="fileList" type="text/x-kendo-template">
+        <tr>
+            <td colspan="2">
+                <div class="file-list">
+                    <a href="/comm/download_my_attachment.do?attachmentId=#:attachmentId#" class="file-tit"><span class="file-icon"></span>#:name#</a>
+                    <span class="file-size">#= commaStr(data.size) #byte</span>
+                    <button class="del-file" onclick="deleteFile(#:attachmentId#, 'list_file_grid')"><i class="fa-solid fa-circle-xmark"></i></button>
+                </div>
+            </td>
+        </tr>
+    </script>
+    <!-- //파일 템플릿 -->
+
+    <script>
+        var now = new Date();
+        var mon = "";
+        var day = "";
+        if ((now.getMonth() + 1) < 10) {
+            mon = "0" + (now.getMonth() + 1);
+        } else {
+            mon = now.getMonth() + 1;
+        }
+        if ((now.getDate()) < 10) {
+            day = "0" + (now.getDate());
+        } else {
+            day = now.getDate();
+        }
+        var nowDay = now.getFullYear() + "-" + mon + "-" + day;
+
+        $(function () {
+            kendo.culture("ko-KR");
+
+            // 파일업로드
+            listFileGridDef("file_grid", 52);
+            fileUploaderDef("file_upload", "uploadWindow", 52, "fileupload_template", "upload_file", "file_grid");
+        });
+
+        var fileGridData = [
+            { name: "파일명.png", size: 123456, attachmentId: 123}
+        ];
+
+        //첨부파일 그리드 정의
+        var listFileGridDef = function(gridNm, objType){
+            $("#"+gridNm).kendoGrid({
+                dataSource: fileGridData,
+                pageable: false,
+                selectable: false,
+                scrollable: false,
+                editable: false,
+                columns: [
+                    { field: "name" },
+                    { field: "size" }
+                ],
+                rowTemplate: kendo.template($("#fileList").html()),
+                noRecords: {
+                    template: "<div class='not-data-cont'><span>파일이 존재하지 않습니다.</span></div>"
+                }
+            });
+        }
+
+        //첨부파일 삭제.
+        function deleteFile (objType, attachmentId , gname){
+            if (confirm("첨부파일을 삭제 하시겠습니까?")) { //첨부파일을 삭제 하시겠습니까?
+                //로딩바 생성.
+                //loadingOpen();
+                $.ajax({
+                    type: 'POST',
+                    url: '<%=com.podosw.web.util.ServletUtils.getContextPath(request)%>/comm/delete_my_attachment.do?output=json',
+                    data: {attachmentId: attachmentId},
+                    success: function (response) {
+                        $("#"+gname).data('kendoGrid').dataSource.read();
+                        //loadingClose();
+
+                    },
+                    error: podo.ui.handleAjaxError,
+                    complete: function (xhr, statusText) {
+                        //로딩바 제거.
+                        //loadingClose();
+                    },
+                    dataType: "json"
+                });
+            }
+        }
+
+        //첨부파일 업로드 컴포넌트 정의
+        var fileUploaderDef = function(fileUploadDivTagId, uploadWindowId, objType, fileUploadTemplateId, uploadFileId, fileGridId){
+
+            if( $('#'+fileUploadDivTagId).text().length == 0  ) {
+                var template = kendo.template($("#"+fileUploadTemplateId).html());
+                $('#'+fileUploadDivTagId).html(template({}));
+            }
+
+            $("#"+uploadFileId).kendoUpload({
+                showFileList : false,
+                width : 500,
+                multiple : false,
+                localization:{ select : '파일 선택' , statusUploaded: "완료.", statusFailed : "업로드 실패.", dropFilesHere: "여기에 파일을 끌어다 놓으세요", },
+                async: {
+                    saveUrl:  "<%= com.podosw.web.util.ServletUtils.getContextPath(request) %>/comm/save_my_attachment.do",
+                    autoUpload: true
+                },
+                upload: function (e) {
+                    e.data = {objectType: objType, objectId:$("#objectId").val()};
+                },
+                error : function (e){},
+                success : function(e){
+                    $("#"+fileGridId).data('kendoGrid').dataSource.read();
+
+                    if(objType == "52"){		//썸네일
+                        $("#thumbnailId").val(e.response.attachmentId);
+                    }
+                },
+                select: function(e){
+                    var loginLogoFileGirdSize = $("#"+fileGridId).data("kendoGrid").dataSource.data().length;
+
+                    if(loginLogoFileGirdSize>0){
+                        e.preventDefault();
+                        alert("이미 등록된 파일을 삭제 후 다시 시도해주세요.");
+                    }else{
+                        $.each(e.files, function(index, value) {
+                            if(value.size>10485760){
+                                e.preventDefault();
+                                alert("파일 사이즈는 10M로 제한되어 있습니다.");
+                            }else{
+                                if(value.extension != ".JPG" && value.extension != ".jpg"
+                                    && value.extension != ".GIF" && value.extension != ".gif"
+                                    && value.extension != ".PNG" && value.extension != ".png") {
+                                    e.preventDefault();
+                                    alert("이미지 파일만 선택해주세요.");
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            $("#"+fileUploadDivTagId).removeClass('hide');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* UPLOAD */
+.k-upload .k-dropzone,
+.k-upload .k-upload-dropzone { background-color: #fcfcfc;}
+
+
+/*
+*--------------------------------------------*
+|                   Kendo Upload             |
+*--------------------------------------------*
+*/
+/* upload */
+.k-grid.file-grid-bt.file-grid .k-grid-header { border-top: 1px solid #e8e8e8;}
+.k-grid .k-grid-content table tr td .k-upload { display: block;}
+.k-grid .k-grid-content table tr td .k-upload .k-upload-actions .k-button { padding: 0;}
+.k-grid .k-grid-content table tr td .k-upload .k-dropzone { padding: 5px 0;}
+.k-grid .k-grid-content table tr td .k-upload-files .k-file { padding: .65em 0 calc(.65em + 2px) 0;}
+.k-grid .k-grid-content table tr td .k-file-validation-message { display: none;}
+.k-grid .k-grid-content table tr td .k-dropzone .k-dropzone-hint { display: none;}
+.k-grid .k-grid-content table tr td .k-file-delete { float: right; width: 20px; height: 20px; cursor:pointer; background: #ffffff url("../images/runway/admin/btn_close_detail.png") no-repeat center;}
+.k-grid .k-grid-content table tr td .file-upload-wrap img { float: left; width: 140px;}
+.k-grid .k-grid-content table tr td .file-upload-wrap .file { display: flex; justify-content: space-between; align-items: center;}
+.k-grid .k-grid-content table tr td .file-upload-wrap .file .file-name { overflow: hidden; max-width: 80%; text-decoration: none; white-space: nowrap; text-overflow: ellipsis;}
+.k-upload { display: flex; flex-direction: column; width: 100%; border: 1px solid #E8E8E8; border-radius: 0; background: #fcfcfc; box-sizing: border-box;}
+.k-upload .k-upload-button { min-width: auto; padding: 9px 16px; border: 1px solid #DDDDDD; border-radius: 3px; background: #FFFFFF; font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 13px; color: #404040; cursor: pointer;}
+.k-upload .k-upload-button .k-button-text { font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 13px; font-weight: 500; color: #404040;}
+.k-upload .k-upload-button:hover { border-color: var(--primary-500);}
+.k-upload + .k-grid .k-grid-header { border-top: 0;}
+.file-template { background: #fff;}
+.file-template .k-grid-header{ display: none;}
+.file-template .k-grid-norecords .file-empty > p{ text-align: center; font-size: 13px; font-weight: 400; color: #8E8E8E;}
+.file-template tbody{ padding: 14px 0;}
+.file-template .file-list{ display: flex; align-items: center; width :100%; padding-left: 15px; margin-bottom: 5px; box-sizing: border-box;}
+.file-template tbody tr td { width: 100%; padding: 0;}
+.file-template .file-list:last-child{ margin-bottom: 0;}
+.file-template .file-list .file-icon{ display: inline-block; float: none; width: 18px; height: 20px; margin-right: 10px; background: url("../images/common/paperclip.svg") no-repeat 50% 50%; vertical-align: middle;}
+.file-template .file-list .file-tit{ display: inline-block; float: left; text-align: left; font-size: 13px; color: #404040;}
+.file-template .file-list a.file-tit { cursor: pointer;}
+.file-template .file-list a.file-tit:hover { color: var(--primary-500); text-decoration: underline;}
+.file-template .file-list .file-size{ display: inline-block; float: left; line-height: 35px; margin-left: 20px; font-size: 13px; color: #999999;}
+.file-template .file-list .del-file,
+.del-file { display: inline-block; flex-shrink: 0; float: left; width: 16px; height: 16px; margin-left: 15px; background-color: #ffffff;
+    background-image: url('../images/runway/admin/icon_file_del.png'); background-repeat: no-repeat;
+    background-position: center center;}
+.file-template-inline { display: flex; flex-wrap: wrap; align-items: center;}
+.file-template-inline .file-list { display: inline-block; width: auto; margin-bottom: 0;}
+.file-template.k-grid tbody > tr:not(.k-detail-row):hover { background-color: transparent;}
+.k-dropzone { background-color: transparent;}
+.k-upload .k-dropzone .k-upload-status > .k-icon { width: 24px; height: 24px; background: url("../images/runway/admin/icon_map.png") no-repeat -161px -131px;}
+.k-upload .k-dropzone .k-upload-status > .k-icon svg { display: none;}
+.k-upload .k-dropzone .k-upload-status > .k-icon:before { content: '';}
+.k-grid.file-grid .k-grid-header { border-top: 0;}
+.k-upload .k-dropzone .k-dropzone-hint,
+.k-upload .k-upload-dropzone .k-dropzone-hint { font-size: 14px; color: #565656;}
+.file-template.k-grid .k-grid-content { border-top: 0;}
+.k-upload .k-upload-files .k-file-name { font-size: 12px; text-wrap: wrap; }
+/* kendo upload ui 고유 */
+.file-upload-default .k-upload { flex-direction: column;}
+/* 사용자 kendo upload */
+.inp-file .drag_Area { width: 100%;}
+.inp-file .k-upload,
+.inp-file .k-upload .k-dropzone, .inp-file .k-upload .k-upload-dropzone { justify-content: flex-start; padding: 0; border: 0; background: transparent; font-family: 'Spoqa Han Sans Neo', sans-serif;}
+.inp-file + .file-template { padding: 20px 0; border: 0; border-bottom: 1px solid #E1E3E3; font-family: 'Spoqa Han Sans Neo', sans-serif;}
+.inp-file + .file-template div.k-grid-norecords { border: 0;}
+[class*="kendo-file"] input[type="file"],
+[class*="inp-file"] input[type="file"] { left: 0 !important;}
+.inp-file .k-upload .k-dropzone .k-upload-status > .k-icon { margin: 0;}
+.inp-file .k-upload .k-dropzone .k-upload-status,
+.inp-file .k-upload .k-upload-dropzone .k-upload-status { font-weight: 500; font-size: 16px; color: #444748;}
+.inp-file + .file-template .file-list .file-tit { font-size: 15px; color: #444748;}
+.inp-file + .file-template .file-list .file-size { font-size: 15px; font-weight: 400; color: #444748;}
+.inp-file + .file-template .file-list .del-file { background-image: url('../images/common/icon_delete_file.svg');}
+.kendo-file2 .k-upload { background: #ffffff;}
+.kendo-file2 .k-upload .k-dropzone { padding: 12px 15px; background: #F8FAFA;}
+.kendo-file2 .k-upload-files { font-family: 'Spoqa Han Sans Neo', sans-serif;}
+.kendo-file2 .k-upload .k-upload-files .k-file-name { padding-left: 10px; font-size: 15px; font-weight: 400; color: #444748;}
+.kendo-file2 .k-upload .k-upload-files .k-file-size { padding-left: 10px; font-size: 13px; font-weight: 400; color: #444748;}
+.k-popup .k-animation-container .k-popup { padding: 0; border: 1px solid #D1D1D1; border-radius: 3px; background: #fff;}
+/*.k-animation-container .k-popup */
+.k-filter-menu .k-list-container { box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.08), 0 0 7px 0 rgba(0, 0, 0, 0.05);}
+.k-popup .k-list .k-item,
+.k-list-ul { padding: 0; background: #ffffff; color: #404040; line-height: 35px;}
+.k-popup.k-list-container { padding: 0; border: 1px solid #dddddd; border-radius: 3px; background: #ffffff; box-shadow: 0 0 7px rgba(0, 0, 0, 0.05), 4px 4px 10px rgba(0, 0, 0, 0.08);}
+.k-popup .k-list .k-selected { background: #F8F6FB; color: #404040;}
+.k-popup .k-list .k-hover { background: var(--primary-500); color: #ffffff;}
+/* 2025 */
+.k-upload .k-dropzone, .k-upload .k-upload-dropzone { background: transparent;}
+.file-grid .k-grid-content.k-auto-scrollable { border-left: 1px solid #e8e8e8; border-bottom: 0;}
+.file-template.k-grid .k-grid-content table tr td { border-left: 0;}
+
+.grid-btn-box { display: flex; gap: 7px;}
+.grid-btn-box .btn_inner { margin: 0;}
+.file-grid .btn_inner { }
+
+.k-grid .k-grid-content table tr td .ptree_btn{ border-radius: 0; color: #fff; line-height: 33px; text-decoration: none;}
+.k-grid .k-grid-content table tr td .ptree_btn.pt_red:hover,
+.k-grid .k-grid-content table tr td .ptree_btn.pt_red:focus,
+.k-grid .k-grid-content table tr td .ptree_btn.pt_red:active{ background: #f1f1f1; color: #e46053; box-shadow: none;}
+.k-grid .k-grid-content table tr td .ptree_btn.pt_red:hover span,
+.k-grid .k-grid-content table tr td .ptree_btn.pt_red:focus span,
+.k-grid .k-grid-content table tr td .ptree_btn.pt_red:active span{ color: #e46053;}
+.k-grid .k-grid-content table tr td .ptree_btn span.k-icon{ display: none;}
+.k-grid .k-grid-content table tr td .ptree_btn.pt_white { color: #4d4d4d;}

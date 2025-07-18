@@ -1,0 +1,43 @@
+@charset "utf-8";
+/*reset*/
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, thead, tbody, tr, th, td, form, fieldset, legend, input, textarea, button {margin:0; padding:0; font-weight:normal}
+table {width:100%; border:0; border-spacing:0; border-collapse:collapse;}
+option {vertical-align:middle;  padding:3px 0;} /* Firefox Fix */
+legend {display:none; visibility:hidden;}
+img, fieldset, button {vertical-align:middle; border:0;}
+ul, ol {list-style:none;}
+em, address {font-style:normal;}
+hr {display:none; visibility:hidden;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {display:block; margin: 0; padding: 0; }
+caption  {height: 0; width: 0; font-size: 0; line-height: 0; margin: 0; padding: 0;}
+input, textarea, button {vertical-align: middle;}
+a {text-decoration:none;color:inherit;}
+a:hover, a:active, a:focus{text-decoration:none;}
+
+/*
+*--------------------------------------------*
+|                   Form                     |
+*--------------------------------------------*
+*/
+select,
+button, textarea, input { appearance:none; padding:0; background:none; border:none; font-family:var(--Pretendard) !important; font-size:inherit; font-weight:inherit; letter-spacing:var(--font-let-spc); color:inherit; outline:0;}
+input[type="text"],
+input[type="password"], input[type="date"], input[type="search"], input[type="number"],
+input[type="time"], input[type="color"], input[type="datetime-local"], input[type="email"],
+input[type="month"], input[type="range"], input[type="url"], input[type="week"],
+select,
+textarea{ width: 100%; caret-color: var(--primary-500);}
+
+/*
+*--------------------------------------------*
+|                   Select                   |
+*--------------------------------------------*
+*/
+input.k-textbox::-webkit-input-placeholder,
+textarea.k-textbox::-webkit-input-placeholder { font-weight: 400; color: #828282;}
+input.k-textbox:-ms-input-placeholder,
+textarea.k-textbox:-ms-input-placeholder { font-weight: 400; color: #828282;}
+input.k-textbox::-ms-input-placeholder,
+textarea.k-textbox::-ms-input-placeholder { font-weight: 400; color: #828282;}
+input.k-textbox::placeholder,
+textarea.k-textbox::placeholder { font-weight: 400; color: #828282;}
