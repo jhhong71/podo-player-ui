@@ -296,7 +296,7 @@ ul, ol{ list-style: none; }
     .side-menu-wrap.for-mobile{ position: relative; display: flex !important; flex-direction: row; width: 100%; height: 70px;}
     .side-menu-wrap.for-mobile button{ border-bottom: 1px solid #ddd;}
     /* .side-menu-wrap.for-mobile button.active{ border-bottom: 2px solid var(--primary-500);} */
-    .side-menu-wrap.for-mobile .moving-underline{ position: absolute; left: 0; bottom: 0; width: 50%; height: 1px; background-color: var(--primary-500); transition: all 0.25s ease-in-out;}
-    .side-menu-wrap.for-mobile button:first-child.active ~ .moving-underline{ transform: translateX(0%);}
-    .side-menu-wrap.for-mobile button:last-child.active ~ .moving-underline{ transform: translateX(100%);}
+    .side-menu-wrap.for-mobile .moving-underline{ position: absolute; left: 0; bottom: 0; width: 50%; height: 2px; background-color: var(--primary-500); transition: all 0.25s ease-in-out;}
+    .side-menu-wrap.for-mobile button:first-child.active ~ .moving-underline{ left: 0;}
+    .side-menu-wrap.for-mobile button:last-child.active ~ .moving-underline{ left: 50%;}
 }
