@@ -296,4 +296,30 @@ ul, ol{ list-style: none; }
     .side-menu-wrap.for-mobile{ position: unset; display: flex !important; flex-direction: row; width: 100%; height: 70px;}
     .side-menu-wrap.for-mobile button{ border-bottom: 1px solid #ddd;}
     .side-menu-wrap.for-mobile button.active{ border-bottom: 2px solid var(--primary-500);}
+
+    .side-menu-wrap button {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.side-menu-wrap button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.side-menu-wrap button.active::after {
+    width: 100%;
+}
+
 }
