@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
-<base href="/podo-player-ui/" />
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학습창 전체화면 예제</title>
-    <link rel="stylesheet" href="/podo-player-ui/root.css">
-    <link rel="stylesheet" href="/podo-player-ui/player.css">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="player.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Kendo UI CSS -->
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.2.829/styles/kendo.default-v2.min.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Kendo UI Script -->
     <script src="https://kendo.cdn.telerik.com/2023.2.829/js/kendo.all.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2023.2.829/js/messages/kendo.messages.ko-KR.min.js"></script>
-    <script src="/podo-player-ui/player.js"></script>
+    <!-- MediaElement Script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelementplayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelement-and-player.min.js"></script>
+    <script src="player.js"></script>
+
 </head>
 <body>
     <main class="player-container">
         <section class="video-wrap" aria-label="학습 영상">
             <header>1. 강의소개</header>
-            <video id="player" controls poster="">
+            <video id="player" controls width="100%" height="100%" preload="none">
                 <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
             </video>
         </section>
@@ -52,35 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-wrap">
-                    <div class="curriculum-section">
-                        <button type="button" class="btn-toggle active"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>섹션 1. Intro</button>
-                        <ul>
-                            <li><button type="button" class="active" onclick="fnStdLink();"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>1-1. 강의 소개</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>1-2. 자료 소개</button></li>
-                        </ul>
-                    </div>
-                    <div class="curriculum-section">
-                        <button type="button" class="btn-toggle active"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>섹션 2. 일반 홈페이지 최적화</button>
-                        <ul>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-1. 실습 내용 소개</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-2. 서비스 탐색 및 코드 분석</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-3. 서비스 탐색 및 코드 분석</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-4. 이미지 지연(lazy) 로딩(intersection observer)</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>2-5. 이미지 사이즈 최적화</button></li>
-                        </ul>
-                    </div>
-                    <div class="curriculum-section">
-                        <button type="button" class="btn-toggle active"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>섹션 3. 일반 홈페이지 최적화</button>
-                        <ul>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-1. 실습 내용 소개</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-2. 서비스 탐색 및 코드 분석</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-3. Layout Shift 피하기</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-4. 이미지 지연(lazy) 로딩(react-lazylo)</button></li>
-                            <li><button type="button" onclick="fnStdLink();"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>3-5. 이미지 사이즈 최적화</button></li>
-                        </ul>
-                    </div>
-                </div>
+                <div id="curriculumList" class="accordion-wrap"></div>
             </aside>
             <aside id="qnaPanel" class="aside-wrap question-wrap" aria-label="질문하기" hidden>
                 <div class="aside-header question-header">
